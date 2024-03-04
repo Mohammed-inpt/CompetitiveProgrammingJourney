@@ -5,25 +5,7 @@ public class Main {
         String st = "I love CS3233 Competitive Programming. i also love AlGoRiThM";
         int l = st.length();
         st = st.toLowerCase();
-//        int Vowel = 0;
-//        int Consonant = 0;
-//        int digit = 0;
-//        int i = 0;
-//        while(i<l){
-//            char c = st.charAt(i);
-//            if(Character.isDigit(c)){
-//                digit++;
-//            }else if("aeiou".indexOf(c) != -1) {
-//                Vowel++;
-//            }else if(Character.isLetter(c)){
-//                Consonant++;
-//            }
-//            i++;
-//        }
-//        System.out.printf("Number of Vowels: %d\n", Vowel);
-//        System.out.printf("Number of Consonants: %d\n", Consonant);
-//        System.out.printf("Number of Digits: %d\n", digit);
-//        System.out.printf("Number of Words: %d\n", st.split(" ").length);
+
         String[] tokens = st.split("[. ]");
         Arrays.sort(tokens);
         for (int i = 0; i<tokens.length ; i++){
