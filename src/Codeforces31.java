@@ -1,27 +1,28 @@
 import java.io.*;
 import java.util.StringTokenizer;
 
-public class Codeforces30 {
+public class Codeforces31 {
     public static void main(String[] args) {
         Kattio io = new Kattio(System.in, System.out);
         int t = io.nextInt();
         while(t-->0){
-            int x = io.nextInt();
             int n = io.nextInt();
-            int ans = 1;
-            for(int i =1 ; i*i<=x; i++){
-                if(x%i==0){
-                    if (n <= i) {
-                        ans = Math.max(ans, x/i);
-                    }
-                    if (i <= x / n) {
-                        ans = Math.max(ans, i);
-                    }
-                }
+            int[] sum = new int[n+1];
+            for(int i= 1; i <sum.length; i++){
+                sum[i] = sum[i-1] + sumdigits(i);
             }
-            io.println(ans);
+
+            io.println(sum[n]);
         }
         io.flush();
+    }
+    public static int sumdigits(int n){
+        int sum = 0;
+        while(n > 0){
+            sum+= n%10;
+            n=n/10;
+        }
+        return sum;
     }
 }
 class Kattio extends PrintWriter {
