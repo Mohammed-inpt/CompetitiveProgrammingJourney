@@ -2,16 +2,18 @@ import java.io.*;
 import java.util.StringTokenizer;
 
 public class Codeforces31 {
+    static int[] sum = new int[200000+1];
+    static{
+        for(int i = 1; i < sum.length; i++){
+            sum[i] = sum[i-1] + sumdigits(i);
+        }
+    }
     public static void main(String[] args) {
         Kattio io = new Kattio(System.in, System.out);
+
         int t = io.nextInt();
         while(t-->0){
             int n = io.nextInt();
-            int[] sum = new int[n+1];
-            for(int i= 1; i <sum.length; i++){
-                sum[i] = sum[i-1] + sumdigits(i);
-            }
-
             io.println(sum[n]);
         }
         io.flush();
