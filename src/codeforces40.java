@@ -65,6 +65,15 @@ public class codeforces40 {
             }
             return null;
         }
+        public float nextFloat() {
+            return Float.parseFloat(next());
+        }
+        public boolean nextBoolean() {
+            return Boolean.parseBoolean(next());
+        }
+        public char nextChar() {
+            return next().charAt(0);
+        }
         public int nextInt() { return Integer.parseInt(next()); }
         public double nextDouble() { return Double.parseDouble(next()); }
         public long nextLong() { return Long.parseLong(next()); }
